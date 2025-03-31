@@ -29,6 +29,50 @@
         };
     };
 
+    macros {
+        tile_e: tile_e {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E) &kp E>;
+            label = "TILE_E";
+        };
+
+        tile_a: tile_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E) &kp A>;
+            label = "TILE_A";
+        };
+
+        tile_u: tile_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E) &kp U>;
+            label = "TILE_U";
+        };
+
+        tilde_i: tilde_i {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E) &kp I>;
+            label = "TILDE_I";
+        };
+
+        tilde_o: tilde_o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E) &kp O>;
+            label = "TILDE_O";
+        };
+
+        enye: enye {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(N) &kp N>;
+            label = "ENYE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -36,10 +80,10 @@
 
         default_layer {
             bindings = <
-&trans  &hold_quick F10 Q  &kp W               &kp E           &kp R                &kp T             &kp Y     &kp U                &kp I      &kp O     &kp P                         &trans
-&trans  &lt 1 A            &mt LEFT_CONTROL S  &mt LEFT_ALT D  &hold_quick LSHFT F  &kp G             &kp H     &hold_quick RSHFT J  &kp K      &kp RALT  &mt RCTRL SEMI                &trans
-&trans  &lt 2 Z            &kp X               &kp C           &kp V                &mt CAPSLOCK B    &kp N     &kp M                &kp COMMA  &kp DOT   &mt LA(NUMBER_1) EXCLAMATION  &trans
-                                               &lt 4 TAB       &kp LA(BSPC)         &kp RET           &kp BSPC  &kp SPACE            &kp RET
+&trans  &hold_quick F10 Q  &kp W               &kp E           &kp R                &kp T                   &kp Y     &kp U                &kp I          &kp O     &kp P                         &trans
+&trans  &lt 1 A            &mt LEFT_CONTROL S  &mt LEFT_ALT D  &hold_quick LSHFT F  &kp G                   &kp H     &hold_quick RSHFT J  &kp K          &kp RALT  &mt RCTRL SEMI                &trans
+&trans  &lt 2 Z            &kp X               &kp C           &kp V                &mt CAPSLOCK B          &kp N     &kp M                &kp COMMA      &kp DOT   &mt LA(NUMBER_1) EXCLAMATION  &trans
+                                               &lt 4 TAB       &kp LA(BSPC)         &mt LEFT_COMMAND RET    &kp BSPC  &kp SPACE            &kp RG(SPACE)
             >;
         };
 
@@ -84,6 +128,15 @@
 &trans  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &trans      &trans      &trans  &trans  &trans  &trans
 &trans  &trans        &trans          &trans        &trans        &trans          &trans      &trans      &trans  &trans  &trans  &trans
                                       &trans        &trans        &trans          &trans      &trans      &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans   &trans  &tile_e  &trans  &trans    &trans  &tile_u  &tilde_i  &tilde_o  &trans  &trans
+&trans  &tile_a  &trans  &trans   &trans  &trans    &trans  &trans   &trans    &trans    &trans  &trans
+&trans  &trans   &trans  &trans   &trans  &trans    &enye   &trans   &trans    &trans    &trans  &trans
+                         &trans   &trans  &trans    &trans  &trans   &trans
             >;
         };
     };
