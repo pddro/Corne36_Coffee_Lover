@@ -88,6 +88,13 @@
             bindings = <&kp A &kp L &kp E &kp J &kp A &kp N &kp D &kp R &kp O &kp W &kp U &kp N &kp D &kp E &kp R &kp L &kp I &kp C &kp H &kp AT &kp G &kp M &kp A &kp L &kp DOT &kp C &kp O &kp M>;
             label = "ALE_EMAIL";
         };
+
+        pewu_email: pewu_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp E &kp W &kp U &kp AT &kp H &kp E &kp Y &kp DOT &kp C &kp O &kp M>;
+            label = "PEWU_EMAIL";
+        };
     };
 
     keymap {
@@ -97,9 +104,9 @@
 
         default_layer {
             bindings = <
-&trans  &hold_quick F10 Q  &kp W               &kp E            &kp R                &hold_quick ESCAPE T    &kp Y                        &kp U                 &kp I          &kp O     &kp P                         &trans
-&trans  &lt 1 A            &mt LEFT_CONTROL S  &mt LEFT_ALT D   &hold_quick LSHFT F  &kp G                   &kp H                        &hold_quick RSHFT J   &kp K          &kp RALT  &lt 5 SINGLE_QUOTE            &trans
-&trans  &lt 2 Z            &kp X               &kp C            &kp V                &mt CAPSLOCK B          &kp N                        &kp M                 &kp COMMA      &kp DOT   &mt LA(NUMBER_1) EXCLAMATION  &trans
+&trans  &hold_quick F10 Q  &kp W               &kp E            &kp R                &hold_quick ESCAPE T    &kp Y                        &kp U                 &kp I          &kp O    &kp P                         &trans
+&trans  &lt 1 A            &mt LEFT_CONTROL S  &mt LEFT_ALT D   &hold_quick LSHFT F  &kp G                   &kp H                        &hold_quick RSHFT J   &kp K          &kp L    &lt 5 SINGLE_QUOTE            &trans
+&trans  &lt 2 Z            &kp X               &kp C            &kp V                &mt CAPSLOCK B          &kp N                        &kp M                 &kp COMMA      &kp DOT  &mt LA(NUMBER_1) EXCLAMATION  &trans
                                                &lt 4 BACKSPACE  &kp LA(BSPC)         &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &quick_layer 3 SPACE  &kp RG(SPACE)
             >;
         };
@@ -108,10 +115,10 @@
 
         nav_layer {
             bindings = <
-&trans  &trans  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LC(LA(UP))      &kp MINUS         &kp N7  &kp N8  &kp N9  &kp FSLH      &trans
-&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp LC(LA(DOWN))    &kp LS(ASTERISK)  &kp N4  &kp N5  &kp N6  &kp LS(PLUS)  &trans
-&trans  &trans  &kp LG(LEFT)  &trans    &kp LG(RIGHT)  &kp SPACE           &kp DOT           &kp N1  &kp N2  &kp N3  &kp EQUAL     &trans
-                              &trans    &trans         &trans              &trans            &trans  &kp N0
+&trans  &trans  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp ESCAPE           &kp MINUS         &kp N7                    &kp N8  &kp N9  &kp FSLH      &trans
+&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp LC(LA(LG(O)))    &kp LS(ASTERISK)  &mt RIGHT_SHIFT NUMBER_4  &kp N5  &kp N6  &kp LS(PLUS)  &trans
+&trans  &trans  &kp LG(LEFT)  &trans    &kp LG(RIGHT)  &kp SPACE            &kp DOT           &kp N1                    &kp N2  &kp N3  &kp EQUAL     &trans
+                              &trans    &kp LS(RET)    &kp LG(RET)          &trans            &trans                    &kp N0
             >;
         };
 
@@ -130,10 +137,10 @@
 
         media_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp C_PLAY_PAUSE  &next_prev         &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE     &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LS(TILDE)     &kp LA(LS(MINUS))  &kp BSLH           &kp FSLH         &kp GRAVE      &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans            &kp SEMI           &kp LS(COLON)      &kp MINUS        &kp LS(QMARK)  &trans
-                        &trans  &trans  &trans    &trans            &trans             &trans
+&trans  &trans      &trans       &trans  &trans  &trans    &kp C_PLAY_PAUSE  &next_prev         &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE     &trans
+&trans  &ale_email  &pewu_email  &trans  &trans  &trans    &kp LS(TILDE)     &kp LA(LS(MINUS))  &kp BSLH           &kp FSLH         &kp GRAVE      &trans
+&trans  &trans      &trans       &trans  &trans  &trans    &trans            &kp SEMI           &kp LS(COLON)      &kp MINUS        &kp LS(QMARK)  &trans
+                                 &trans  &trans  &trans    &trans            &trans             &trans
             >;
         };
 
