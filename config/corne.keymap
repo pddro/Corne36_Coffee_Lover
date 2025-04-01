@@ -115,6 +115,20 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        enter {
+            bindings = <&kp RET>;
+            key-positions = <19 20 21>;
+        };
+
+        escape_combo {
+            bindings = <&kp ESCAPE>;
+            key-positions = <4 3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -122,7 +136,7 @@
 
         default_layer {
             bindings = <
-&trans  &hold_quick F10 Q  &kp W               &kp E           &kp R         &hold_quick ESCAPE T    &kp Y                        &kp U                 &kp I          &kp O    &kp P                         &trans
+&trans  &hold_quick F10 Q  &kp W               &kp E           &kp R         &hold_quick ESCAPE T    &kp Y                        &kp U                 &kp I          &kp O    &quick_layer 5 P              &trans
 &trans  &lt 1 A            &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F         &kp G                   &kp H                        &kp J                 &kp K          &kp L    &lt 4 SINGLE_QUOTE            &trans
 &trans  &lt 2 Z            &kp X               &kp C           &kp V         &mt CAPSLOCK B          &kp N                        &kp M                 &kp COMMA      &kp DOT  &mt LA(NUMBER_1) EXCLAMATION  &trans
                                                &cmd_sht_tab    &cmd_del_tab  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &quick_layer 3 SPACE  &kp RG(SPACE)
@@ -131,19 +145,19 @@
 
         nav_layer {
             bindings = <
-&trans  &trans  &kp LA(LEFT)  &kp UP     &kp LA(RIGHT)  &kp ESCAPE           &kp MINUS         &kp N7                    &kp N8  &kp N9  &kp FSLH      &trans
-&trans  &trans  &kp LEFT      &kp DOWN   &kp RIGHT      &kp LC(LA(LG(O)))    &kp LS(ASTERISK)  &mt RIGHT_SHIFT NUMBER_4  &kp N5  &kp N6  &kp LS(PLUS)  &trans
-&trans  &trans  &kp LG(LEFT)  &trans     &kp LG(RIGHT)  &kp SPACE            &kp DOT           &kp N1                    &kp N2  &kp N3  &kp EQUAL     &trans
+&trans  &trans  &kp LA(LEFT)  &kp UP     &kp LA(RIGHT)  &kp ESCAPE           &kp MINUS         &kp N7                    &kp N8  &kp N9  &kp FSLH   &trans
+&trans  &trans  &kp LEFT      &kp DOWN   &kp RIGHT      &kp LC(LA(LG(O)))    &kp LS(ASTERISK)  &mt RIGHT_SHIFT NUMBER_4  &kp N5  &kp N6  &kp PLUS   &trans
+&trans  &trans  &kp LG(LEFT)  &trans     &kp LG(RIGHT)  &kp SPACE            &kp DOT           &kp N1                    &kp N2  &kp N3  &kp EQUAL  &trans
                               &kp SPACE  &kp LS(RET)    &kp LG(RET)          &trans            &trans                    &kp N0
             >;
         };
 
         sym_layer {
             bindings = <
-&trans  &none  &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &kp LS(LG(N5))  &kp C_BRIGHTNESS_INC    &kp LS(LBRC)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)   &kp LS(RPAR)   &trans
-&trans  &none  &trans                &kp LS(RET)           &kp LG(RET)     &kp C_BRIGHTNESS_DEC    &kp LS(RBRC)  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &kp LS(PIPE)   &trans
-&trans  &none  &kp APOSTROPHE        &kp LS(TAB)           &kp TAB         &kp SPACE               &kp LBKT      &kp RBKT      &kp LS(AT)     &kp LS(POUND)  &kp LS(QMARK)  &trans
-                                     &trans                &trans          &trans                  &trans        &trans        &trans
+&trans  &none  &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &kp LS(LG(N5))  &kp C_BRIGHTNESS_INC    &kp LEFT_BRACE   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &none  &trans                &kp LS(RET)           &kp LG(RET)     &kp C_BRIGHTNESS_DEC    &kp RIGHT_BRACE  &kp DOLLAR     &kp PERCENT   &kp CARET             &kp PIPE               &trans
+&trans  &none  &kp APOSTROPHE        &kp LS(TAB)           &kp TAB         &kp SPACE               &kp LBKT         &kp RBKT       &kp AT_SIGN   &kp HASH              &kp LS(QMARK)          &trans
+                                     &trans                &trans          &trans                  &trans           &trans         &trans
             >;
         };
 
