@@ -5,7 +5,10 @@
 
 // Configure hold-tap behaviors (optional: using default 200ms tapping term)
 
-&mt { tapping_term_ms = <200>; };   // Mod-tap (for home row mods)
+&mt {
+    tapping_term_ms = <200>;
+    flavor = "tap-preferred";
+};   // Mod-tap (for home row mods)
 &lt { tapping_term_ms = <200>; };   // Layer-tap (for layer keys)
 / {
     behaviors {
