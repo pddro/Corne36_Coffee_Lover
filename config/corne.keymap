@@ -41,10 +41,11 @@
         cmd_del_tab: cmd_del_tab {
             compatible = "zmk,behavior-mod-morph";
             label = "CMD_DEL_TAB";
-            bindings = <&mt LEFT_COMMAND LA(BACKSPACE)>, <&kp TAB>;
+            bindings = <&mt LEFT_SHIFT LA(BACKSPACE)>, <&kp TAB>;
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
         };
 
         cmd_sht_tab: cmd_sht_tab {
@@ -159,10 +160,10 @@
 
         default_layer {
             bindings = <
-&trans  &qescapeHold F10 0  &kp W               &kp E           &kp R         &hold_quick ESCAPE T          &kp Y                          &kp U                                &kp I          &kp O    &quick_layer 5 P              &trans
-&trans  &lt 1 A             &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F         &kp G                         &kp H                          &kp J                                &kp K          &kp L    &lt 4 SINGLE_QUOTE            &trans
-&trans  &lt 2 Z             &kp X               &kp C           &kp V         &mt CAPSLOCK B                &kp N                          &kp M                                &kp COMMA      &kp DOT  &mt LA(QUESTION) EXCLAMATION  &trans
-                                                &cmd_sht_tab    &cmd_del_tab  &hold_quick LEFT_SHIFT RET    &hold_quick RIGHT_SHIFT SPACE  &hold_quick RIGHT_COMMAND BACKSPACE  &kp RG(SPACE)
+&trans  &qescapeHold F10 0  &kp W               &kp E           &kp R         &hold_quick ESCAPE T    &kp Y                        &kp U                  &kp I          &kp O    &quick_layer 5 P              &trans
+&trans  &lt 1 A             &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F         &kp G                   &kp H                        &kp J                  &kp K          &kp L    &lt 4 SINGLE_QUOTE            &trans
+&trans  &lt 2 Z             &kp X               &kp C           &kp V         &mt CAPSLOCK B          &kp N                        &kp M                  &kp COMMA      &kp DOT  &mt LA(QUESTION) EXCLAMATION  &trans
+                                                &cmd_sht_tab    &cmd_del_tab  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
             >;
         };
 
