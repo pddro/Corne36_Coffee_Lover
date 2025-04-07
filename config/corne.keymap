@@ -21,61 +21,6 @@
             tapping-term-ms = <150>;
         };
 
-        hold_quick: hold_quick {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_QUICK";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <130>;
-            flavor = "tap-preferred";
-        };
-
-        quick_layer: quick_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "QUICK_LAYER";
-            #binding-cells = <2>;
-            bindings = <&lt>, <&kp>;
-
-            tapping-term-ms = <165>;
-            flavor = "tap-preferred";
-        };
-
-        cmd_del_tab: cmd_del_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_DEL_TAB";
-            bindings = <&mt LEFT_SHIFT LA(BACKSPACE)>, <&kp TAB>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-            keep-mods = <(MOD_LGUI)>;
-        };
-
-        cmd_sht_tab: cmd_sht_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CMD_SHT_TAB";
-            bindings = <&quick_layer 3 BACKSPACE>, <&kp LS(TAB)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
-
-        qescape: qescape {
-            compatible = "zmk,behavior-tap-dance";
-            label = "QESCAPE";
-            #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp ESCAPE>;
-        };
-
-        qescapeHold: qescapeHold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "QESCAPEHOLD";
-            bindings = <&mt>, <&qescape>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-        };
-
         slowlayer: slowlayer {
             compatible = "zmk,behavior-hold-tap";
             label = "SLOWLAYER";
@@ -151,6 +96,7 @@
         escape_combo {
             bindings = <&kp ESCAPE>;
             key-positions = <4 3>;
+            timeout-ms = <44>;
         };
 
         mediaenter {
@@ -173,10 +119,10 @@
 
         default_layer {
             bindings = <
-&trans  &qescapeHold F10 0  &kp W               &kp E           &kp R         &kp T                   &kp Y                        &kp U                  &kp I          &kp O    &slowlayer 5 P                &trans
-&trans  &lt 1 A             &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F         &kp G                   &kp H                        &kp J                  &kp K          &kp L    &lt 4 SINGLE_QUOTE            &trans
-&trans  &lt 2 Z             &kp X               &kp C           &kp V         &mt CAPSLOCK B          &kp N                        &kp M                  &kp COMMA      &kp DOT  &mt LA(QUESTION) EXCLAMATION  &trans
-                                                &cmd_sht_tab    &cmd_del_tab  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
+&trans  &mt F10 Q  &kp W               &kp E            &kp R                         &kp T                   &kp Y                        &kp U                  &kp I          &kp O    &slowlayer 5 P                &trans
+&trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D   &kp F                         &kp G                   &kp H                        &kp J                  &kp K          &kp L    &lt 4 SINGLE_QUOTE            &trans
+&trans  &lt 2 Z    &kp X               &kp C            &kp V                         &mt CAPSLOCK B          &kp N                        &kp M                  &kp COMMA      &kp DOT  &mt LA(QUESTION) EXCLAMATION  &trans
+                                       &lt 3 BACKSPACE  &mt LEFT_SHIFT LA(BACKSPACE)  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
             >;
         };
 
