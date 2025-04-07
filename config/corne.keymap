@@ -93,20 +93,18 @@
     combos {
         compatible = "zmk,combos";
 
-        escape_combo {
+        combo_esc {
             bindings = <&kp ESCAPE>;
             key-positions = <4 3>;
             timeout-ms = <100>;
         };
 
-        mediaenter {
+        combo_media {
             bindings = <&to 3>;
             key-positions = <19 20>;
-            layers = <0>;
-            timeout-ms = <100>;
         };
 
-        mediaexit {
+        combo_media_back {
             bindings = <&to 0>;
             key-positions = <19 20>;
             layers = <3>;
