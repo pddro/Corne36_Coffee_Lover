@@ -96,6 +96,7 @@
         combo_esc {
             bindings = <&kp ESCAPE>;
             key-positions = <4 3>;
+            layers = <0>;
         };
 
         combo_media {
@@ -129,7 +130,7 @@
 &trans  &trans  &kp LA(LEFT)  &kp UP     &kp LA(RIGHT)  &kp ESCAPE           &kp MINUS         &kp N7                    &kp N8  &kp N9  &kp FSLH   &trans
 &trans  &trans  &kp LEFT      &kp DOWN   &kp RIGHT      &kp LC(LA(LG(O)))    &kp LS(ASTERISK)  &mt RIGHT_SHIFT NUMBER_4  &kp N5  &kp N6  &kp PLUS   &trans
 &trans  &trans  &kp LG(LEFT)  &trans     &kp LG(RIGHT)  &kp TAB              &kp DOT           &kp N1                    &kp N2  &kp N3  &kp EQUAL  &trans
-                              &kp SPACE  &kp LS(RET)    &kp LG(RET)          &trans            &trans                    &kp N0
+                              &kp SPACE  &trans         &trans               &trans            &trans                    &kp N0
             >;
         };
 
