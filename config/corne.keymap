@@ -96,13 +96,14 @@
         escape_combo {
             bindings = <&kp ESCAPE>;
             key-positions = <4 3>;
-            timeout-ms = <44>;
+            timeout-ms = <100>;
         };
 
         mediaenter {
             bindings = <&to 3>;
             key-positions = <19 20>;
             layers = <0>;
+            timeout-ms = <100>;
         };
 
         mediaexit {
