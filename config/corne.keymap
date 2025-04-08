@@ -30,6 +30,26 @@
             tapping-term-ms = <500>;
             flavor = "tap-preferred";
         };
+
+        mod_e_tab: mod_e_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_E_TAB";
+            bindings = <&kp E>, <&kp LS(TAB)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
+
+        mod_r_tab: mod_r_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_R_TAB";
+            bindings = <&kp R>, <&kp TAB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
     };
 
     macros {
@@ -88,6 +108,13 @@
             bindings = <&kp P &kp E &kp W &kp U &kp AT &kp H &kp E &kp Y &kp DOT &kp C &kp O &kp M>;
             label = "PEWU_EMAIL";
         };
+
+        stiky_tab: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_COMMAND &kp TAB>;
+            label = "NEW_MACRO";
+        };
     };
 
     combos {
@@ -95,20 +122,26 @@
 
         combo_esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <4 3>;
+            key-positions = <3 2>;
             layers = <0>;
         };
 
         davinci_esc {
             bindings = <&kp ESCAPE>;
             key-positions = <2 3>;
-            layers = <6>;
+            layers = <5>;
         };
 
         davinci_ret {
             bindings = <&kp RET>;
             key-positions = <14 15>;
-            layers = <6>;
+            layers = <5>;
+        };
+
+        combo_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <14 15>;
+            layers = <0>;
         };
     };
 
@@ -119,7 +152,7 @@
 
         default_layer {
             bindings = <
-&trans  &mt F10 Q  &kp W               &kp E           &kp R                         &kp T                   &kp Y                        &kp U                  &kp I          &slowlayer 6 O  &slowlayer 5 P                &trans
+&trans  &mt F10 Q  &kp W               &mod_e_tab      &mod_r_tab                    &mt LEFT_COMMAND T      &kp Y                        &kp U                  &kp I          &slowlayer 5 O  &slowlayer 6 P                &trans
 &trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F                         &kp G                   &kp H                        &kp J                  &kp K          &kp L           &lt 4 SINGLE_QUOTE            &trans
 &trans  &lt 2 Z    &kp X               &kp C           &kp V                         &mt CAPSLOCK B          &kp N                        &kp M                  &kp COMMA      &kp DOT         &mt LA(QUESTION) EXCLAMATION  &trans
                                        &lt 3 SPACE     &mt LEFT_SHIFT LA(BACKSPACE)  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
@@ -162,6 +195,15 @@
             >;
         };
 
+        davinci {
+            bindings = <
+&trans  &kp Q   &trans  &kp UP_ARROW       &kp DOWN_ARROW   &trans                    &trans  &trans  &trans  &slowlayer 0 O  &trans  &trans
+&trans  &trans  &trans  &trans             &trans           &trans                    &trans  &trans  &trans  &trans          &trans  &trans
+&trans  &trans  &trans  &trans             &mt LS(LG(V)) V  &trans                    &trans  &trans  &trans  &trans          &trans  &trans
+                        &kp LS(BACKSPACE)  &kp LS(L)        &mt LEFT_COMMAND SPACE    &trans  &trans  &trans
+            >;
+        };
+
         bt_layer {
             bindings = <
 &trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_PRV  &bt BT_NXT  &trans  &trans  &to 0   &trans
@@ -171,12 +213,12 @@
             >;
         };
 
-        davinci {
+        testlayer {
             bindings = <
-&trans  &slowlayer 0 Q  &trans  &kp UP_ARROW       &kp DOWN_ARROW   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans             &trans           &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans             &mt LS(LG(V)) V  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-                                &kp LS(BACKSPACE)  &kp LS(L)        &mt LEFT_COMMAND SPACE    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &stiky_tab    &trans  &trans  &trans
             >;
         };
     };
