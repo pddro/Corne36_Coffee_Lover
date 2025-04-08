@@ -50,6 +50,26 @@
             mods = <(MOD_LGUI)>;
             keep-mods = <(MOD_LGUI)>;
         };
+
+        mod_left_thumb: mod_left_thumb {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_LEFT_THUMB";
+            bindings = <&lt 3 SPACE>, <&kp LS(TAB)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
+
+        mod_middle_lthumb: mod_middle_lthumb {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_MIDDLE_LTHUMB";
+            bindings = <&mt LSHFT LA(BACKSPACE)>, <&kp TAB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
     };
 
     macros {
@@ -152,10 +172,10 @@
 
         default_layer {
             bindings = <
-&trans  &mt F10 Q  &kp W               &mod_e_tab      &mod_r_tab                    &mt LEFT_COMMAND T      &kp Y                        &kp U                  &kp I          &slowlayer 5 O  &slowlayer 6 P                &trans
-&trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F                         &kp G                   &kp H                        &kp J                  &kp K          &kp L           &lt 4 SINGLE_QUOTE            &trans
-&trans  &lt 2 Z    &kp X               &kp C           &kp V                         &mt CAPSLOCK B          &kp N                        &kp M                  &kp COMMA      &kp DOT         &mt LA(QUESTION) EXCLAMATION  &trans
-                                       &lt 3 SPACE     &mt LEFT_SHIFT LA(BACKSPACE)  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
+&trans  &mt F10 Q  &kp W               &kp E            &kp R               &kp T                   &kp Y                        &kp U                  &kp I          &slowlayer 5 O  &slowlayer 6 P                &trans
+&trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D   &kp F               &kp G                   &kp H                        &kp J                  &kp K          &kp L           &lt 4 SINGLE_QUOTE            &trans
+&trans  &lt 2 Z    &kp X               &kp C            &kp V               &mt CAPSLOCK B          &kp N                        &kp M                  &kp COMMA      &kp DOT         &mt LA(QUESTION) EXCLAMATION  &trans
+                                       &mod_left_thumb  &mod_middle_lthumb  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
             >;
         };
 
@@ -179,10 +199,10 @@
 
         media_layer {
             bindings = <
-&trans  &trans      &trans       &trans  &trans  &trans    &kp C_PLAY_PAUSE  &next_prev         &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp C_MUTE           &trans
-&trans  &ale_email  &pewu_email  &trans  &trans  &trans    &kp LS(TILDE)     &kp LA(LS(MINUS))  &kp BSLH           &kp FSLH           &kp GRAVE            &trans
-&trans  &trans      &trans       &trans  &trans  &trans    &trans            &kp SEMI           &kp LS(COLON)      &kp RA(RS(MINUS))  &mt LS(MINUS) MINUS  &trans
-                                 &trans  &trans  &trans    &trans            &trans             &trans
+&trans  &kp C_PLAY_PAUSE  &next_prev   &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE    &kp C_PLAY_PAUSE  &next_prev         &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp C_MUTE           &trans
+&trans  &ale_email        &pewu_email  &trans             &trans           &trans        &kp LS(TILDE)     &kp LA(LS(MINUS))  &kp BSLH           &kp FSLH           &kp GRAVE            &trans
+&trans  &trans            &trans       &trans             &trans           &trans        &trans            &kp SEMI           &kp LS(COLON)      &kp RA(RS(MINUS))  &mt LS(MINUS) MINUS  &trans
+                                       &trans             &trans           &trans        &trans            &trans             &trans
             >;
         };
 
