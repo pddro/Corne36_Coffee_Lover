@@ -195,9 +195,9 @@
 
         default_layer {
             bindings = <
-&trans  &mt F10 Q  &kp W               &kp E           &kp R                         &kp T                   &kp Y                        &kp U                  &kp I            &slowlayer 5 O  &slowlayer 6 P      &trans
-&trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F                         &kp G                   &kp H                        &kp J                  &kp K            &kp L           &lt 4 SINGLE_QUOTE  &trans
-&trans  &lt 2 Z    &kp X               &kp C           &kp V                         &mt CAPSLOCK B          &kp N                        &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus     &trans
+&trans  &mt F10 Q  &kp W               &kp E           &kp R                         &kp T                   &kp Y                        &kp U                  &kp I            &slowlayer 5 O  &slowlayer 6 P          &trans
+&trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F                         &kp G                   &kp H                        &kp J                  &kp K            &kp L           &mt LA(E) SINGLE_QUOTE  &trans
+&trans  &lt 2 Z    &kp X               &kp C           &kp V                         &mt CAPSLOCK B          &mt LA(N) N                  &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus         &trans
                                        &lt 3 SPACE     &mt LEFT_SHIFT LA(BACKSPACE)  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
             >;
         };
