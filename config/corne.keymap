@@ -129,11 +129,20 @@
             label = "PEWU_EMAIL";
         };
 
-        stiky_tab: new_macro {
+        macro_to_cmd: macro_to_cmd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&sk LEFT_COMMAND &kp TAB>;
-            label = "NEW_MACRO";
+            bindings = <&to 7>, <&macro_press>;
+
+            label = "MACRO_TO_CMD";
+        };
+
+        macro_release: macro_release {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release>, <&to 0>;
+
+            label = "MACRO_RELEASE";
         };
     };
 
@@ -174,6 +183,11 @@
             bindings = <&kp LG(V)>;
             key-positions = <28 27>;
             layers = <0>;
+        };
+
+        tabber {
+            bindings = <&macro_to_cmd>;
+            key-positions = <13 14 15>;
         };
     };
 
@@ -247,10 +261,10 @@
 
         testlayer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &stiky_tab    &trans  &trans  &trans
+&trans  &trans  &trans       &trans   &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LS(TAB)  &kp TAB  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans       &trans   &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+                             &trans   &trans  &macro_release    &trans  &trans  &trans
             >;
         };
     };
