@@ -140,7 +140,11 @@
         command_up: macro_release {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND>, <&macro_release>, <&to 0>;
+            bindings =
+                <&macro_release>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&to 0>;
 
             label = "MACRO_RELEASE";
         };
@@ -163,25 +167,25 @@
 
         davinci_ret {
             bindings = <&kp RET>;
-            key-positions = <14 15>;
+            key-positions = <12 13>;
             layers = <5>;
         };
 
         combo_backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <11 13>;
+            key-positions = <12 13>;
             layers = <0>;
         };
 
         combo_copy {
             bindings = <&kp LG(C)>;
-            key-positions = <23 24>;
+            key-positions = <23 22>;
             layers = <0>;
         };
 
         combo_paste {
             bindings = <&kp LG(V)>;
-            key-positions = <24 25>;
+            key-positions = <24 23>;
             layers = <0>;
         };
 
@@ -262,10 +266,10 @@
 
         testlayer {
             bindings = <
-&trans  &trans  &trans       &trans   &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LS(TAB)  &kp TAB  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans       &trans   &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
-                             &trans   &trans  &command_up    &trans  &trans  &trans
+&trans  &trans  &trans  &trans       &trans   &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp LS(TAB)  &kp TAB  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans       &trans   &trans         &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans       &trans   &command_up    &trans  &trans  &trans
             >;
         };
     };
