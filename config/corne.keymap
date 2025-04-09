@@ -137,11 +137,10 @@
             label = "MACRO_TO_CMD";
         };
 
-        macro_release: macro_release {
+        command_up: macro_release {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&to 0>;
-
+            bindings = <&command_up &to 0>;
             label = "MACRO_RELEASE";
         };
     };
@@ -261,10 +260,10 @@
 
         testlayer {
             bindings = <
-&trans  &trans  &trans       &trans   &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LS(TAB)  &kp TAB  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans       &trans   &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-                             &trans   &trans  &macro_release    &trans  &trans  &trans
+&trans  &trans  &trans       &trans   &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LS(TAB)  &kp TAB  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans       &trans   &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+                             &trans   &trans  &command_up    &trans  &trans  &trans
             >;
         };
     };
