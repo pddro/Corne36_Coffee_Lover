@@ -55,53 +55,11 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_EXCLA_MINUS";
             #binding-cells = <0>;
-            bindings = <&mt QUESTION EXCLAMATION>, <&kp MINUS>;
+            bindings = <&mt QUESTION EXCLAMATION>, <&kp MINUS>, <&triple_excla>;
         };
     };
 
     macros {
-        tile_e: tile_e {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(E) &kp E>;
-            label = "TILE_E";
-        };
-
-        tile_a: tile_a {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(E) &kp A>;
-            label = "TILE_A";
-        };
-
-        tile_u: tile_u {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(E) &kp U>;
-            label = "TILE_U";
-        };
-
-        tilde_i: tilde_i {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(E) &kp I>;
-            label = "TILDE_I";
-        };
-
-        tilde_o: tilde_o {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(E) &kp O>;
-            label = "TILDE_O";
-        };
-
-        enye: enye {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(N) &kp N>;
-            label = "ENYE";
-        };
-
         ale_email: ale_email {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -120,7 +78,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&to 7>,
+                <&to 6>,
                 <&macro_press>,
                 <&kp LEFT_COMMAND>,
                 <&macro_tap>,
@@ -140,6 +98,13 @@
 
             label = "MACRO_RELEASE";
         };
+
+        triple_excla: triple_excla {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL &kp EXCL &kp EXCL>;
+            label = "TRIPLE_EXCLA";
+        };
     };
 
     combos {
@@ -154,13 +119,13 @@
         davinci_esc {
             bindings = <&kp ESCAPE>;
             key-positions = <2 3>;
-            layers = <5>;
+            layers = <4>;
         };
 
         davinci_ret {
             bindings = <&kp RET>;
             key-positions = <12 13>;
-            layers = <5>;
+            layers = <4>;
         };
 
         combo_backspace {
@@ -195,7 +160,7 @@
 
         default_layer {
             bindings = <
-&trans  &mt F10 Q  &kp W               &kp E           &kp R                         &kp T                   &kp Y                        &kp U                  &kp I            &slowlayer 5 O  &slowlayer 6 P          &trans
+&trans  &mt F10 Q  &kp W               &kp E           &kp R                         &kp T                   &kp Y                        &kp U                  &kp I            &slowlayer 4 O  &slowlayer 5 P          &trans
 &trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F                         &kp G                   &kp H                        &kp J                  &kp K            &kp L           &mt LA(E) SINGLE_QUOTE  &trans
 &trans  &lt 2 Z    &kp X               &kp C           &kp V                         &mt CAPSLOCK B          &mt LA(N) N                  &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus         &trans
                                        &lt 3 SPACE     &mt LEFT_SHIFT LA(BACKSPACE)  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
@@ -226,15 +191,6 @@
 &trans  &ale_email        &pewu_email  &trans             &trans           &trans        &kp LS(TILDE)     &kp LA(LS(MINUS))  &kp BSLH           &kp FSLH           &kp GRAVE            &trans
 &trans  &trans            &trans       &trans             &trans           &trans        &trans            &kp SEMI           &kp LS(COLON)      &kp RA(RS(MINUS))  &mt LS(MINUS) MINUS  &trans
                                        &trans             &trans           &trans        &trans            &trans             &trans
-            >;
-        };
-
-        snanish {
-            bindings = <
-&trans  &trans   &trans  &tile_e  &trans  &trans    &trans  &tile_u  &tilde_i  &tilde_o  &trans  &trans
-&trans  &tile_a  &trans  &trans   &trans  &trans    &trans  &trans   &trans    &trans    &trans  &trans
-&trans  &trans   &trans  &trans   &trans  &trans    &enye   &trans   &trans    &trans    &trans  &trans
-                         &trans   &trans  &trans    &trans  &trans   &trans
             >;
         };
 
