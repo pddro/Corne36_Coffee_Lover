@@ -140,7 +140,7 @@
         command_up: macro_release {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp LEFT_COMMAND &to 0>;
+            bindings = <&kp LEFT_COMMAND>, <&macro_release>, <&to 0>;
 
             label = "MACRO_RELEASE";
         };
@@ -169,25 +169,25 @@
 
         combo_backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <14 16>;
+            key-positions = <11 13>;
             layers = <0>;
         };
 
         combo_copy {
             bindings = <&kp LG(C)>;
-            key-positions = <26 27>;
+            key-positions = <23 24>;
             layers = <0>;
         };
 
         combo_paste {
             bindings = <&kp LG(V)>;
-            key-positions = <28 27>;
+            key-positions = <24 25>;
             layers = <0>;
         };
 
         tabber {
             bindings = <&macro_to_cmd>;
-            key-positions = <13 14 15>;
+            key-positions = <12 13 11>;
             layers = <0>;
         };
     };
