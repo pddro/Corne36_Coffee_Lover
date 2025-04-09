@@ -31,26 +31,6 @@
             flavor = "tap-preferred";
         };
 
-        mod_e_tab: mod_e_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOD_E_TAB";
-            bindings = <&kp E>, <&kp LS(TAB)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-            keep-mods = <(MOD_LGUI)>;
-        };
-
-        mod_r_tab: mod_r_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOD_R_TAB";
-            bindings = <&kp R>, <&kp TAB>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-            keep-mods = <(MOD_LGUI)>;
-        };
-
         mod_left_thumb: mod_left_thumb {
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_LEFT_THUMB";
@@ -233,10 +213,10 @@
 
         sym_layer {
             bindings = <
-&trans  &none  &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &kp LS(LG(N5))       &kp C_BRIGHTNESS_INC    &kp LEFT_BRACE   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &none  &kp LG(LS(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp LG(LC(LS(RET)))  &kp C_BRIGHTNESS_DEC    &kp RIGHT_BRACE  &kp DOLLAR     &kp PERCENT   &kp CARET             &kp PIPE               &trans
-&trans  &none  &kp APOSTROPHE        &kp LS(TAB)           &kp TAB              &kp SPACE               &kp LBKT         &kp RBKT       &kp AT_SIGN   &kp HASH              &kp LS(QMARK)          &trans
-                                     &trans                &trans               &trans                  &trans           &trans         &trans
+&trans  &none  &none                 &none                 &none                     &kp C_BRIGHTNESS_INC    &kp LEFT_BRACE   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &none  &kp LG(LS(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp LG(LC(LS(NUMBER_4)))  &kp C_BRIGHTNESS_DEC    &kp RIGHT_BRACE  &kp DOLLAR     &kp PERCENT   &kp CARET             &kp PIPE               &trans
+&trans  &none  &kp APOSTROPHE        &kp LS(TAB)           &kp TAB                   &kp SPACE               &kp LBKT         &kp RBKT       &kp AT_SIGN   &kp HASH              &kp LS(QMARK)          &trans
+                                     &trans                &trans                    &trans                  &trans           &trans         &trans
             >;
         };
 
