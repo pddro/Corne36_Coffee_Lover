@@ -70,6 +70,13 @@
             mods = <(MOD_LGUI)>;
             keep-mods = <(MOD_LGUI)>;
         };
+
+        td_excla_minus: td_excla_minus {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_EXCLA_MINUS";
+            #binding-cells = <0>;
+            bindings = <&mt QUESTION EXCLAMATION>, <&kp MINUS>;
+        };
     };
 
     macros {
@@ -132,7 +139,12 @@
         macro_to_cmd: macro_to_cmd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 7>, <&macro_press>, <&kp LEFT_COMMAND>;
+            bindings =
+                <&to 7>,
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp TAB>;
 
             label = "MACRO_TO_CMD";
         };
@@ -203,9 +215,9 @@
 
         default_layer {
             bindings = <
-&trans  &mt F10 Q  &kp W               &kp E            &kp R               &kp T                   &kp Y                        &kp U                  &kp I          &slowlayer 5 O  &slowlayer 6 P                &trans
-&trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D   &kp F               &kp G                   &kp H                        &kp J                  &kp K          &kp L           &lt 4 SINGLE_QUOTE            &trans
-&trans  &lt 2 Z    &kp X               &kp C            &kp V               &mt CAPSLOCK B          &kp N                        &kp M                  &kp COMMA      &kp DOT         &mt LA(QUESTION) EXCLAMATION  &trans
+&trans  &mt F10 Q  &kp W               &kp E            &kp R               &kp T                   &kp Y                        &kp U                  &kp I            &slowlayer 5 O  &slowlayer 6 P      &trans
+&trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D   &kp F               &kp G                   &kp H                        &kp J                  &kp K            &kp L           &lt 4 SINGLE_QUOTE  &trans
+&trans  &lt 2 Z    &kp X               &kp C            &kp V               &mt CAPSLOCK B          &kp N                        &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus     &trans
                                        &mod_left_thumb  &mod_middle_lthumb  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
             >;
         };
@@ -221,10 +233,10 @@
 
         sym_layer {
             bindings = <
-&trans  &none  &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &kp LS(LG(N5))  &kp C_BRIGHTNESS_INC    &kp LEFT_BRACE   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &none  &trans                &kp LS(RET)           &kp LG(RET)     &kp C_BRIGHTNESS_DEC    &kp RIGHT_BRACE  &kp DOLLAR     &kp PERCENT   &kp CARET             &kp PIPE               &trans
-&trans  &none  &kp APOSTROPHE        &kp LS(TAB)           &kp TAB         &kp SPACE               &kp LBKT         &kp RBKT       &kp AT_SIGN   &kp HASH              &kp LS(QMARK)          &trans
-                                     &trans                &trans          &trans                  &trans           &trans         &trans
+&trans  &none  &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &kp LS(LG(N5))       &kp C_BRIGHTNESS_INC    &kp LEFT_BRACE   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &none  &kp LG(LS(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp LG(LC(LS(RET)))  &kp C_BRIGHTNESS_DEC    &kp RIGHT_BRACE  &kp DOLLAR     &kp PERCENT   &kp CARET             &kp PIPE               &trans
+&trans  &none  &kp APOSTROPHE        &kp LS(TAB)           &kp TAB              &kp SPACE               &kp LBKT         &kp RBKT       &kp AT_SIGN   &kp HASH              &kp LS(QMARK)          &trans
+                                     &trans                &trans               &trans                  &trans           &trans         &trans
             >;
         };
 
