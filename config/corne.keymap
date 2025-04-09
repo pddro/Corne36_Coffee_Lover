@@ -160,18 +160,20 @@
 
         combo_backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <14 15 16>;
+            key-positions = <14 16>;
             layers = <0>;
         };
 
         combo_copy {
             bindings = <&kp LG(C)>;
             key-positions = <26 27>;
+            layers = <0>;
         };
 
         combo_paste {
             bindings = <&kp LG(V)>;
             key-positions = <28 27>;
+            layers = <0>;
         };
     };
 
