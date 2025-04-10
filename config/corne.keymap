@@ -38,33 +38,6 @@
             bindings = <&mt QUESTION EXCLAMATION>, <&kp MINUS>, <&triple_excla>;
         };
 
-        screenshot_w: screenshot_w {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SCREENSHOT_W";
-            #binding-cells = <0>;
-            bindings = <&kp W>, <&mt LG(LS(NUMBER_3)) W>;
-
-            tapping-term-ms = <150>;
-        };
-
-        screenshot_r: screenshot_r {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SCREENSHOT_R";
-            #binding-cells = <0>;
-            bindings = <&kp R>, <&mt LG(LS(LC(NUMBER_4))) R>;
-
-            tapping-term-ms = <150>;
-        };
-
-        screenshot_e: screenshot_e {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SCREENSHOT_E";
-            #binding-cells = <0>;
-            bindings = <&kp E>, <&mt LG(LS(NUMBER_4)) E>;
-
-            tapping-term-ms = <150>;
-        };
-
         power_return: power_return {
             compatible = "zmk,behavior-tap-dance";
             label = "POWER_RETURN";
@@ -72,6 +45,33 @@
             bindings = <&mt LEFT_COMMAND RETURN>, <&mt LG(RETURN) RETURN>;
 
             tapping-term-ms = <150>;
+        };
+
+        screenshot_mm_e: screenshot_mm_e {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SCREENSHOT_MM_E";
+            bindings = <&kp E>, <&mt LG(LS(NUMBER_4)) E>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        screenshot_mm_w: screenshot_mm_w {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SCREENSHOT_MM_W";
+            bindings = <&kp W>, <&mt LG(LS(NUMBER_3)) W>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        screenshot_mm_r: screenshot_mm_r {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SCREENSHOT_MM_R";
+            bindings = <&kp R>, <&mt LG(LS(LC(NUMBER_4))) R>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
         };
     };
 
@@ -199,10 +199,10 @@
 
         default_layer {
             bindings = <
-&trans  &mt F10 Q  &screenshot_w       &screenshot_e   &screenshot_r                 &kp T             &kp Y                        &kp U                  &kp I            &slowlayer 4 O  &slowlayer 5 P          &trans
-&trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F                         &kp G             &kp H                        &kp J                  &kp K            &kp L           &mt LA(E) SINGLE_QUOTE  &trans
-&trans  &lt 2 Z    &kp X               &kp C           &kp V                         &mt CAPSLOCK B    &mt LA(N) N                  &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus         &trans
-                                       &lt 3 SPACE     &mt LEFT_SHIFT LA(BACKSPACE)  &power_return     &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
+&trans  &mt F10 Q  &screenshot_mm_w    &screenshot_mm_e  &screenshot_mm_r              &kp T             &kp Y                        &kp U                  &kp I            &slowlayer 4 O  &slowlayer 5 P          &trans
+&trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D    &kp F                         &kp G             &kp H                        &kp J                  &kp K            &kp L           &mt LA(E) SINGLE_QUOTE  &trans
+&trans  &lt 2 Z    &kp X               &kp C             &kp V                         &mt CAPSLOCK B    &mt LA(N) N                  &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus         &trans
+                                       &lt 3 SPACE       &mt LEFT_SHIFT LA(BACKSPACE)  &power_return     &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
             >;
         };
 
