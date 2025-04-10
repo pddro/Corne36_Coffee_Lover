@@ -44,7 +44,7 @@
             #binding-cells = <0>;
             bindings = <&kp W>, <&mt LG(LS(NUMBER_3)) W>;
 
-            tapping-term-ms = <300>;
+            tapping-term-ms = <150>;
         };
 
         screenshot_r: screenshot_r {
@@ -53,7 +53,7 @@
             #binding-cells = <0>;
             bindings = <&kp R>, <&mt LG(LS(LC(NUMBER_4))) R>;
 
-            tapping-term-ms = <300>;
+            tapping-term-ms = <150>;
         };
 
         screenshot_e: screenshot_e {
@@ -62,7 +62,7 @@
             #binding-cells = <0>;
             bindings = <&kp E>, <&mt LG(LS(NUMBER_4)) E>;
 
-            tapping-term-ms = <300>;
+            tapping-term-ms = <150>;
         };
 
         power_return: power_return {
@@ -71,7 +71,7 @@
             #binding-cells = <0>;
             bindings = <&mt LEFT_COMMAND RETURN>, <&mt LG(RETURN) RETURN>;
 
-            tapping-term-ms = <160>;
+            tapping-term-ms = <150>;
         };
     };
 
