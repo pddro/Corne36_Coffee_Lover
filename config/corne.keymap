@@ -31,31 +31,32 @@
             flavor = "tap-preferred";
         };
 
-        mod_left_thumb: mod_left_thumb {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOD_LEFT_THUMB";
-            bindings = <&lt 3 SPACE>, <&kp LS(TAB)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-            keep-mods = <(MOD_LGUI)>;
-        };
-
-        mod_middle_lthumb: mod_middle_lthumb {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOD_MIDDLE_LTHUMB";
-            bindings = <&mt LSHFT LA(BACKSPACE)>, <&kp TAB>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-            keep-mods = <(MOD_LGUI)>;
-        };
-
         td_excla_minus: td_excla_minus {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_EXCLA_MINUS";
             #binding-cells = <0>;
             bindings = <&mt QUESTION EXCLAMATION>, <&kp MINUS>, <&triple_excla>;
+        };
+
+        screenshot_w: screenshot_w {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCREENSHOT_W";
+            #binding-cells = <0>;
+            bindings = <&kp W>, <&mt LG(LS(NUMBER_3)) W>;
+        };
+
+        screenshot_r: screenshot_r {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCREENSHOT_R";
+            #binding-cells = <0>;
+            bindings = <&kp R>, <&mt LG(LS(LC(NUMBER_4))) R>;
+        };
+
+        screenshot_e: screenshot_e {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCREENSHOT_E";
+            #binding-cells = <0>;
+            bindings = <&kp E>, <&mt LG(LS(NUMBER_4)) E>;
         };
     };
 
@@ -78,7 +79,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&to 6>,
+                <&to 0>,
                 <&macro_press>,
                 <&kp LEFT_COMMAND>,
                 <&macro_tap>,
@@ -104,6 +105,18 @@
             #binding-cells = <0>;
             bindings = <&kp EXCL &kp EXCL &kp EXCL>;
             label = "TRIPLE_EXCLA";
+        };
+
+        macro_esc_release: macro_esc_release {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp ESCAPE &to 0>;
+
+            label = "MACRO_ESC_RELEASE";
         };
     };
 
@@ -151,6 +164,12 @@
             key-positions = <12 13 11>;
             layers = <0>;
         };
+
+        layer7_esc {
+            bindings = <&macro_esc_release>;
+            key-positions = <2 3>;
+            layers = <5>;
+        };
     };
 
     keymap {
@@ -160,7 +179,7 @@
 
         default_layer {
             bindings = <
-&trans  &mt F10 Q  &kp W               &kp E           &kp R                         &kp T                   &kp Y                        &kp U                  &kp I            &slowlayer 4 O  &slowlayer 5 P          &trans
+&trans  &mt F10 Q  &screenshot_w       &screenshot_e   &screenshot_r                 &kp T                   &kp Y                        &kp U                  &kp I            &slowlayer 4 O  &slowlayer 5 P          &trans
 &trans  &lt 1 A    &mt LEFT_CONTROL S  &mt LEFT_ALT D  &kp F                         &kp G                   &kp H                        &kp J                  &kp K            &kp L           &mt LA(E) SINGLE_QUOTE  &trans
 &trans  &lt 2 Z    &kp X               &kp C           &kp V                         &mt CAPSLOCK B          &mt LA(N) N                  &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus         &trans
                                        &lt 3 SPACE     &mt LEFT_SHIFT LA(BACKSPACE)  &mt LEFT_COMMAND RET    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
@@ -178,19 +197,19 @@
 
         sym_layer {
             bindings = <
-&trans  &none  &none                 &none                 &none                     &kp C_BRIGHTNESS_INC    &kp LEFT_BRACE   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &none  &kp LG(LS(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp LG(LC(LS(NUMBER_4)))  &kp C_BRIGHTNESS_DEC    &kp RIGHT_BRACE  &kp DOLLAR     &kp PERCENT   &kp CARET             &kp PIPE               &trans
-&trans  &none  &kp APOSTROPHE        &kp LS(TAB)           &kp TAB                   &kp SPACE               &kp LBKT         &kp RBKT       &kp AT_SIGN   &kp HASH              &kp LS(QMARK)          &trans
-                                     &trans                &trans                    &trans                  &trans           &trans         &trans
+&trans  &none  &none      &none          &none          &none     &kp LEFT_BRACE   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &none  &kp GRAVE  &kp SEMICOLON  &kp BACKSLASH  &none     &kp RIGHT_BRACE  &kp DOLLAR     &kp PERCENT   &kp CARET             &kp PIPE               &trans
+&trans  &none  &none      &none          &none          &none     &kp LBKT         &kp RBKT       &kp AT_SIGN   &kp HASH              &kp LS(LA(MINUS))      &trans
+                          &trans         &trans         &trans    &trans           &trans         &trans
             >;
         };
 
         media_layer {
             bindings = <
-&trans  &kp C_PLAY_PAUSE  &next_prev   &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE    &kp C_PLAY_PAUSE  &next_prev         &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp C_MUTE           &trans
-&trans  &ale_email        &pewu_email  &trans             &trans           &trans        &kp LS(TILDE)     &kp LA(LS(MINUS))  &kp BSLH           &kp FSLH           &kp GRAVE            &trans
-&trans  &trans            &trans       &trans             &trans           &trans        &trans            &kp SEMI           &kp LS(COLON)      &kp RA(RS(MINUS))  &mt LS(MINUS) MINUS  &trans
-                                       &trans             &trans           &trans        &trans            &trans             &trans
+&trans  &kp C_PLAY_PAUSE  &next_prev   &kp C_VOLUME_DOWN  &kp C_VOLUME_UP       &kp C_MUTE              &kp C_PLAY_PAUSE  &next_prev  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE  &trans
+&trans  &ale_email        &pewu_email  &none              &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &none             &none       &none              &none            &none       &trans
+&trans  &trans            &trans       &trans             &trans                &trans                  &none             &none       &none              &none            &none       &trans
+                                       &trans             &trans                &trans                  &trans            &trans      &trans
             >;
         };
 
@@ -203,21 +222,21 @@
             >;
         };
 
-        bt_layer {
-            bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_PRV  &bt BT_NXT  &trans  &trans  &to 0   &trans
-&trans  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &trans      &trans      &trans  &trans  &trans  &trans
-&trans  &trans        &trans          &trans        &trans        &trans          &trans      &trans      &trans  &trans  &trans  &trans
-                                      &trans        &trans        &trans          &trans      &trans      &trans
-            >;
-        };
-
         tablayer {
             bindings = <
 &trans  &trans  &trans       &trans       &trans   &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LS(TAB)  &kp LS(TAB)  &kp TAB  &trans         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans       &trans       &trans   &trans         &trans  &trans  &trans  &trans  &trans  &trans
                              &trans       &trans   &command_up    &trans  &trans  &trans
+            >;
+        };
+
+        bt_layer {
+            bindings = <
+&trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_PRV  &bt BT_NXT  &trans  &trans  &to 0   &trans
+&trans  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &trans      &trans      &trans  &trans  &trans  &trans
+&trans  &trans        &trans          &trans        &trans        &trans          &trans      &trans      &trans  &trans  &trans  &trans
+                                      &trans        &trans        &trans          &trans      &trans      &trans
             >;
         };
     };
