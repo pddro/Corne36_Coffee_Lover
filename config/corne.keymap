@@ -63,7 +63,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "POWER_RETURN";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_COMMAND RETURN>, <&mt LC(RETURN) RETURN>;
+            bindings = <&mt LEFT_COMMAND RETURN>, <&mt LG(RETURN) RETURN>;
         };
     };
 
@@ -176,6 +176,11 @@
             bindings = <&macro_esc_release>;
             key-positions = <2 3>;
             layers = <5>;
+        };
+
+        combo_finder {
+            bindings = <&kp LG(LA(SPACE))>;
+            key-positions = <20 21>;
         };
     };
 
