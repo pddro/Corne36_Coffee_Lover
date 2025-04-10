@@ -43,6 +43,8 @@
             label = "SCREENSHOT_W";
             #binding-cells = <0>;
             bindings = <&kp W>, <&mt LG(LS(NUMBER_3)) W>;
+
+            tapping-term-ms = <300>;
         };
 
         screenshot_r: screenshot_r {
@@ -50,6 +52,8 @@
             label = "SCREENSHOT_R";
             #binding-cells = <0>;
             bindings = <&kp R>, <&mt LG(LS(LC(NUMBER_4))) R>;
+
+            tapping-term-ms = <300>;
         };
 
         screenshot_e: screenshot_e {
@@ -57,6 +61,8 @@
             label = "SCREENSHOT_E";
             #binding-cells = <0>;
             bindings = <&kp E>, <&mt LG(LS(NUMBER_4)) E>;
+
+            tapping-term-ms = <300>;
         };
 
         power_return: power_return {
@@ -64,6 +70,8 @@
             label = "POWER_RETURN";
             #binding-cells = <0>;
             bindings = <&mt LEFT_COMMAND RETURN>, <&mt LG(RETURN) RETURN>;
+
+            tapping-term-ms = <160>;
         };
     };
 
