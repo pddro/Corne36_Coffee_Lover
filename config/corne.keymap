@@ -115,7 +115,11 @@
         macro_rel_simple: macro_rel_simple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp LEFT_COMMAND>;
+            bindings =
+                <&macro_release>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&to 0>;
 
             label = "MACRO_REL_SIMPLE";
         };
