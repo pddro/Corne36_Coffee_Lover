@@ -51,6 +51,15 @@
 
             tapping-term-ms = <150>;
         };
+
+        mt_300: mt_300 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_300";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     macros {
@@ -202,7 +211,7 @@
         combo_system {
             bindings = <&to 3>;
             key-positions = <3 4>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <300>;
             layers = <0>;
         };
 
@@ -219,10 +228,10 @@
 
         base {
             bindings = <
-&trans  &mt F10 Q  &mt LG(LS(NUMBER_3)) W  &mt LG(LS(NUMBER_4)) E  &mt LG(LC(LS(NUMBER_4))) R    &kp T                     &kp Y                        &kp U                  &kp I            &slowlayer 4 O  &slowlayer 6 P          &trans
-&trans  &lt 1 A    &mt LEFT_CONTROL S      &mt LEFT_ALT D          &kp F                         &kp G                     &kp H                        &kp J                  &kp K            &kp L           &mt LA(E) SINGLE_QUOTE  &trans
-&trans  &lt 2 Z    &kp X                   &kp C                   &kp V                         &mt CAPSLOCK B            &mt LA(N) N                  &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus         &trans
-                                           &kp SPACE               &mt LEFT_SHIFT LA(BACKSPACE)  &mt LEFT_COMMAND ENTER    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
+&trans  &mt F10 Q  &mt_300 LG(LS(NUMBER_3)) W  &mt_300 LG(LS(NUMBER_4)) E  &mt_300 LG(LC(LS(NUMBER_4))) R  &kp T                     &kp Y                        &kp U                  &kp I            &slowlayer 4 O  &slowlayer 6 P          &trans
+&trans  &lt 1 A    &mt LEFT_CONTROL S          &mt LEFT_ALT D              &kp F                           &kp G                     &kp H                        &kp J                  &kp K            &kp L           &mt LA(E) SINGLE_QUOTE  &trans
+&trans  &lt 2 Z    &kp X                       &kp C                       &kp V                           &mt CAPSLOCK B            &mt LA(N) N                  &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus         &trans
+                                               &kp SPACE                   &mt LEFT_SHIFT LA(BACKSPACE)    &mt LEFT_COMMAND ENTER    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
             >;
         };
 
@@ -246,10 +255,10 @@
 
         system {
             bindings = <
-&trans  &kp C_PLAY_PAUSE  &next_prev   &kp K_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP         &kp C_PLAY_PAUSE  &next_prev  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE  &trans
-&trans  &ale_email        &pewu_email  &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &none             &none       &none              &none            &none       &trans
-&trans  &trans            &trans       &trans      &trans                &trans                  &none             &none       &none              &none            &none       &trans
-                                       &trans      &trans                &to 0                   &to 0             &trans      &trans
+&none  &kp C_PLAY_PAUSE  &next_prev   &kp K_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP         &kp C_PLAY_PAUSE  &next_prev  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE  &none
+&none  &ale_email        &pewu_email  &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &none             &none       &none              &none            &none       &none
+&none  &none             &none        &none       &none                 &none                   &none             &none       &none              &none            &none       &none
+                                      &none       &none                 &to 0                   &to 0             &none       &none
             >;
         };
 
