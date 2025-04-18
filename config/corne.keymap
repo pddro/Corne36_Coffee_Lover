@@ -305,7 +305,7 @@
             bindings = <
 &trans  &mt F10 Q  &mt_300 LG(LS(NUMBER_3)) W  &mt_300 LG(LS(NUMBER_4)) E  &mt_300 LG(LC(LS(NUMBER_4))) R  &kp T                     &kp Y                        &kp U                  &slowlayer 7 I   &slowlayer 4 O  &slowlayer 6 P          &trans
 &trans  &lt 1 A    &mt LEFT_CONTROL S          &mt LEFT_ALT D              &kp F                           &kp G                     &kp H                        &kp J                  &kp K            &kp L           &mt LA(E) SINGLE_QUOTE  &trans
-&trans  &lt 2 Z    &kp X                       &kp C                       &kp V                           &mt CAPSLOCK B            &mt_faster LA(N) N           &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus         &trans
+&trans  &lt 2 Z    &kp X                       &kp C                       &kp V                           &mt CAPSLOCK B            &kp N                        &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus         &trans
                                                &kp SPACE                   &mt LEFT_SHIFT LA(BACKSPACE)    &mt LEFT_COMMAND ENTER    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
             >;
         };
