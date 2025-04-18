@@ -251,6 +251,13 @@
             require-prior-idle-ms = <150>;
             layers = <8>;
         };
+
+        quick_hyphen {
+            bindings = <&kp MINUS>;
+            key-positions = <28 29>;
+            require-prior-idle-ms = <150>;
+            layers = <8>;
+        };
     };
 
     keymap {
@@ -305,7 +312,7 @@
 
         tabber {
             bindings = <
-&trans  &none  &none        &none        &none    &none          &none  &none  &none  &none  &none  &none
+&trans  &kp Q  &none        &none        &none    &none          &none  &none  &none  &none  &none  &none
 &none   &none  &kp LS(TAB)  &kp LS(TAB)  &kp TAB  &none          &none  &none  &none  &none  &none  &none
 &none   &none  &none        &none        &none    &none          &none  &none  &none  &none  &none  &none
                             &none        &none    &command_up    &none  &none  &none
