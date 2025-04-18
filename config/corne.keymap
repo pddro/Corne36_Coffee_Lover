@@ -276,7 +276,7 @@
 
         quick_hyphen {
             bindings = <&kp MINUS>;
-            key-positions = <29 30>;
+            key-positions = <29 28>;
             require-prior-idle-ms = <150>;
             layers = <0>;
         };
