@@ -36,10 +36,8 @@
             label = "TD_EXCLA_MINUS";
             #binding-cells = <0>;
             bindings =
-                <&mt MINUS EXCLAMATION>,
-                <&mt LS(LA(MINUS)) QUESTION>,
-                <&hyphen_space>,
-                <&triple_excla>;
+                <&mt LA(NUMBER_1) EXCLAMATION>,
+                <&mt LA(LS(SLASH)) QUESTION>;
 
             tapping-term-ms = <180>;
         };
