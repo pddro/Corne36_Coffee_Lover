@@ -212,6 +212,7 @@
         combo_finder {
             bindings = <&kp LG(LA(SPACE))>;
             key-positions = <20 21>;
+            layers = <0>;
         };
 
         combo_obsidian {
@@ -282,14 +283,14 @@
         };
 
         tr_combo_alltank {
-            bindings = <&kp LG(GRAVE)>;
-            key-positions = <2 3>;
+            bindings = <&kp LC(GRAVE)>;
+            key-positions = <2 1>;
             layers = <7 8>;
         };
 
         tr_combo_allair {
             bindings = <&kp LA(GRAVE)>;
-            key-positions = <4 3>;
+            key-positions = <3 2>;
             layers = <7 8>;
         };
 
