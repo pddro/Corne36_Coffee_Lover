@@ -159,14 +159,8 @@
         combo_esc {
             bindings = <&kp ESCAPE>;
             key-positions = <3 2>;
-            layers = <0>;
+            layers = <0 4>;
             require-prior-idle-ms = <150>;
-        };
-
-        davinci_esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <2 3>;
-            layers = <4>;
         };
 
         davinci_ret {
