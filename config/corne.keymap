@@ -151,6 +151,13 @@
 
             label = "ENYE_UPPERCASE";
         };
+
+        macro_glhf: glhf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RET &kp G &kp L &kp H &kp F &kp RET>;
+            label = "GLHF";
+        };
     };
 
     combos {
@@ -300,10 +307,10 @@
             layers = <7 8>;
         };
 
-        combo_air_bu {
-            bindings = <&kp LA(GRAVE)>;
-            key-positions = <12 11 10 13>;
-            layers = <7 8>;
+        combo_glhf {
+            bindings = <&macro_glhf>;
+            key-positions = <0 4>;
+            layers = <7>;
         };
     };
 
