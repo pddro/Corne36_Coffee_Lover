@@ -155,7 +155,13 @@
         macro_glhf: glhf {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RET &kp G &kp L &kp H &kp F &kp RET>;
+            bindings =
+                <&kp ENTER>,
+                <&macro_wait_time 100>,
+                <&kp G &kp L &kp H &kp F>,
+                <&macro_wait_time 100>,
+                <&kp RET>;
+
             label = "GLHF";
         };
     };
@@ -284,7 +290,7 @@
         };
 
         tr_combo_allair {
-            bindings = <&kp LA(GRAVE)>;
+            bindings = <&kp LG(GRAVE)>;
             key-positions = <3 2>;
             layers = <7 8>;
         };
