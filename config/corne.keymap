@@ -157,8 +157,10 @@
             #binding-cells = <0>;
             bindings =
                 <&kp ENTER>,
-                <&macro_wait_time 300>,
-                <&kp G &kp L &kp H &kp F>,
+                <&macro_wait_time 250>,
+                <&kp G>,
+                <&macro_wait_time 250>,
+                <&kp L &kp H &kp F>,
                 <&macro_wait_time 150>,
                 <&kp RET>;
 
