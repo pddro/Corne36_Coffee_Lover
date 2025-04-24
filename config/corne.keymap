@@ -157,9 +157,9 @@
             #binding-cells = <0>;
             bindings =
                 <&kp ENTER>,
-                <&macro_wait_time 100>,
+                <&macro_wait_time 300>,
                 <&kp G &kp L &kp H &kp F>,
-                <&macro_wait_time 100>,
+                <&macro_wait_time 150>,
                 <&kp RET>;
 
             label = "GLHF";
