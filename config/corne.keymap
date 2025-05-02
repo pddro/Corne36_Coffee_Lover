@@ -278,20 +278,14 @@
         };
 
         tr_combo_inf {
-            bindings = <&kp LS(GRAVE)>;
+            bindings = <&kp GRAVE>;
             key-positions = <0 1>;
             layers = <7 8>;
         };
 
         tr_combo_alltank {
-            bindings = <&kp LC(GRAVE)>;
+            bindings = <&kp SLASH>;
             key-positions = <2 1>;
-            layers = <7 8>;
-        };
-
-        tr_combo_allair {
-            bindings = <&kp LG(GRAVE)>;
-            key-positions = <3 2>;
             layers = <7 8>;
         };
 
@@ -390,10 +384,10 @@
 
         GAMER {
             bindings = <
-&trans  &kp Q  &kp W  &kp E      &kp R           &kp T      &trans  &trans  &to 0   &trans  &trans  &trans
-&trans  &kp A  &kp S  &kp D      &kp F           &kp G      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp Z  &kp X  &kp C      &kp V           &kp TAB    &trans  &trans  &trans  &trans  &trans  &trans
-                      &kp SPACE  &kp LEFT_SHIFT  &kp RET    &trans  &trans  &trans
+&trans  &kp Q  &kp W  &kp E         &kp R           &kp T               &trans  &trans  &to 0   &trans  &trans  &trans
+&trans  &kp A  &kp S  &kp D         &kp F           &kp G               &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Z  &kp X  &kp C         &kp V           &kp LEFT_CONTROL    &trans  &trans  &trans  &trans  &trans  &trans
+                      &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_COMMAND    &trans  &trans  &trans
             >;
         };
 
