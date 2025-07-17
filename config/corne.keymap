@@ -242,18 +242,10 @@
             key-positions = <0 14>;
         };
 
-        combo_to_layer8 {
-            bindings = <&to 8>;
-            key-positions = <12 13>;
-            layers = <7>;
-            require-prior-idle-ms = <150>;
-        };
-
         combo_to_layer7 {
             bindings = <&to 7>;
             key-positions = <12 13>;
             require-prior-idle-ms = <150>;
-            layers = <8>;
         };
 
         quick_hyphen {
@@ -280,31 +272,25 @@
         tr_combo_inf {
             bindings = <&kp GRAVE>;
             key-positions = <0 1>;
-            layers = <7 8>;
+            layers = <7>;
         };
 
         tr_combo_alltank {
             bindings = <&kp SLASH>;
             key-positions = <2 1>;
-            layers = <7 8>;
+            layers = <7>;
         };
 
         tr_combo_all {
             bindings = <&kp GRAVE>;
             key-positions = <20 21>;
-            layers = <7 8>;
+            layers = <7>;
         };
 
         tr_combo_bs {
             bindings = <&kp BACKSPACE>;
             key-positions = <22 23>;
-            layers = <7 8>;
-        };
-
-        fkeys {
-            bindings = <&to 9>;
-            key-positions = <3 4>;
-            layers = <7 8>;
+            layers = <7>;
         };
 
         combo_glhf {
@@ -384,28 +370,10 @@
 
         GAMER {
             bindings = <
-&trans  &kp Q  &kp W  &kp E         &kp R           &kp T               &trans  &trans  &to 0   &trans  &trans  &trans
-&trans  &kp A  &kp S  &kp D         &kp F           &kp G               &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp Z  &kp X  &kp C         &kp V           &kp LEFT_CONTROL    &trans  &trans  &trans  &trans  &trans  &trans
-                      &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_COMMAND    &trans  &trans  &trans
-            >;
-        };
-
-        GAMER_NUM {
-            bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4          &kp N5              &trans  &trans  &to 0   &trans  &trans  &trans
-&trans  &kp A   &kp N6  &kp N7  &kp N8          &kp N9              &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &to 7   &none   &none   &none           &kp N0              &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &kp LEFT_SHIFT  &kp LEFT_COMMAND    &trans  &trans  &trans
-            >;
-        };
-
-        f_keys {
-            bindings = <
-&none  &kp F1  &kp F2  &kp F3            &kp F4        &kp F5              &none  &none  &none  &none  &none  &none
-&none  &kp F6  &kp F7  &kp F8            &kp F9        &kp F10             &none  &none  &none  &none  &none  &none
-&none  &to 7   &none   &none             &kp F11       &kp F12             &none  &none  &none  &none  &none  &none
-                       &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND    &none  &none  &none
+&trans  &kp Q  &kp W  &kp E          &kp R           &kp T            &trans  &trans  &to 0   &trans  &trans  &trans
+&trans  &kp A  &kp S  &kp D          &kp F           &kp G            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Z  &kp X  &kp LS(SLASH)  &kp LC(SLASH)   &kp LA(SLASH)    &trans  &trans  &trans  &trans  &trans  &trans
+                      &kp BACKSPACE  &kp LEFT_SHIFT  &kp SLASH        &trans  &trans  &trans
             >;
         };
     };
