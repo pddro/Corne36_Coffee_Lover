@@ -372,7 +372,7 @@
             bindings = <
 &trans  &kp Q  &kp W  &kp E          &kp R           &kp T            &trans  &trans  &to 0   &trans  &trans  &trans
 &trans  &kp A  &kp S  &kp D          &kp F           &kp G            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp Z  &kp X  &kp LS(SLASH)  &kp LC(SLASH)   &kp LA(SLASH)    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Z  &kp X  &kp LS(SLASH)  &kp LC(SLASH)   &kp LG(SLASH)    &trans  &trans  &trans  &trans  &trans  &trans
                       &kp BACKSPACE  &kp LEFT_SHIFT  &kp SLASH        &trans  &trans  &trans
             >;
         };
