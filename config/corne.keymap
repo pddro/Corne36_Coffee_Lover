@@ -210,13 +210,6 @@
             require-prior-idle-ms = <150>;
         };
 
-        combo_system {
-            bindings = <&to 3>;
-            key-positions = <3 4>;
-            require-prior-idle-ms = <400>;
-            layers = <0>;
-        };
-
         quick_hyphen {
             bindings = <&kp MINUS>;
             key-positions = <29 28>;
