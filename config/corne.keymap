@@ -71,7 +71,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&to 5>,
+                <&to 4>,
                 <&macro_press>,
                 <&kp LEFT_COMMAND>,
                 <&macro_tap>,
@@ -144,6 +144,13 @@
 
             label = "ENYE_UPPERCASE";
         };
+
+        wakeout_email: wakeout_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp E &kp D &kp R &kp O &kp AT &kp W &kp A &kp K &kp E &kp O &kp U &kp T &kp DOT &kp C &kp O>;
+            label = "WAKEOUT_EMAIL";
+        };
     };
 
     combos {
@@ -152,14 +159,14 @@
         combo_esc {
             bindings = <&kp ESCAPE>;
             key-positions = <3 2>;
-            layers = <0 4>;
+            layers = <0 3>;
             require-prior-idle-ms = <150>;
         };
 
         davinci_ret {
             bindings = <&kp RET>;
             key-positions = <12 13>;
-            layers = <4>;
+            layers = <3>;
         };
 
         combo_backspace {
@@ -186,7 +193,7 @@
         tabber {
             bindings = <&macro_to_cmd>;
             key-positions = <12 13 11>;
-            layers = <0 7>;
+            layers = <0 6>;
             require-prior-idle-ms = <400>;
         };
 
@@ -239,10 +246,10 @@
 
         base {
             bindings = <
-&trans  &mt F10 Q  &mt_300 LG(LS(NUMBER_3)) W  &mt_300 LG(LS(NUMBER_4)) E  &mt_300 LG(LC(LS(NUMBER_4))) R  &mt_300 LS(LG(N5)) T      &kp Y                        &kp U                  &slowlayer 7 I   &slowlayer 4 O  &slowlayer 6 P          &trans
+&trans  &mt F10 Q  &mt_300 LG(LS(NUMBER_3)) W  &mt_300 LG(LS(NUMBER_4)) E  &mt_300 LG(LC(LS(NUMBER_4))) R  &mt_300 LS(LG(N5)) T      &kp Y                        &kp U                  &slowlayer 6 I   &slowlayer 3 O  &slowlayer 5 P          &trans
 &trans  &lt 1 A    &mt LEFT_CONTROL S          &mt LEFT_ALT D              &kp F                           &kp G                     &kp H                        &kp J                  &kp K            &kp L           &mt LA(E) SINGLE_QUOTE  &trans
 &trans  &lt 2 Z    &kp X                       &kp C                       &kp V                           &mt CAPSLOCK B            &kp N                        &kp M                  &mt COLON COMMA  &mt SLASH DOT   &td_excla_minus         &trans
-                                               &lt 3 SPACE                 &mt LEFT_SHIFT LA(BACKSPACE)    &mt LEFT_COMMAND ENTER    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
+                                               &lt 0 SPACE                 &mt LEFT_SHIFT LA(BACKSPACE)    &mt LEFT_COMMAND ENTER    &mt RIGHT_COMMAND BACKSPACE  &mt RIGHT_SHIFT SPACE  &kp RG(SPACE)
             >;
         };
 
@@ -257,19 +264,10 @@
 
         symbols {
             bindings = <
-&trans  &none  &none      &none          &none          &none     &kp LEFT_BRACE   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &none  &kp GRAVE  &kp SEMICOLON  &kp BACKSLASH  &none     &kp RIGHT_BRACE  &kp DOLLAR     &kp PERCENT   &kp CARET             &kp PIPE               &trans
-&trans  &none  &none      &none          &none          &none     &kp LBKT         &kp RBKT       &kp AT_SIGN   &kp HASH              &kp LS(LA(MINUS))      &trans
-                          &trans         &trans         &trans    &trans           &trans         &trans
-            >;
-        };
-
-        system {
-            bindings = <
-&none  &kp C_PLAY_PAUSE  &next_prev   &kp K_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP         &kp C_PLAY_PAUSE  &next_prev  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE  &none
-&none  &ale_email        &pewu_email  &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &none             &none       &none              &none            &none       &none
-&none  &none             &none        &none       &none                 &none                   &none             &none       &none              &none            &none       &none
-                                      &none       &none                 &to 0                   &to 0             &none       &none
+&trans  &kp C_PLAY_PAUSE  &next_prev      &kp K_MUTE   &kp C_VOLUME_DOWN     &kp C_VOLUME_UP         &kp LEFT_BRACE   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &none             &ale_email      &pewu_email  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &kp RIGHT_BRACE  &kp DOLLAR     &kp PERCENT   &kp CARET             &kp PIPE               &trans
+&trans  &none             &wakeout_email  &kp GRAVE    &kp SEMICOLON         &kp BACKSLASH           &kp LBKT         &kp RBKT       &kp AT_SIGN   &kp HASH              &kp LS(LA(MINUS))      &trans
+                                          &trans       &trans                &trans                  &trans           &trans         &trans
             >;
         };
 
