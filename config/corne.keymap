@@ -227,15 +227,20 @@
         enye_lower {
             bindings = <&enye_lowercase>;
             key-positions = <25 26>;
-            require-prior-idle-ms = <200>;
             layers = <0>;
         };
 
         enye_upper {
             bindings = <&enye_uppercase>;
             key-positions = <25 26 27>;
-            require-prior-idle-ms = <150>;
             layers = <0>;
+        };
+
+        esc_cmd_tab {
+            bindings = <&macro_esc_release>;
+            key-positions = <3 2>;
+            require-prior-idle-ms = <150>;
+            layers = <4>;
         };
     };
 
