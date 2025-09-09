@@ -19,7 +19,7 @@
 &msc { time-to-max-speed-ms = <50>; };
 
 &mmv {
-    time-to-max-speed-ms = <50>;
+    time-to-max-speed-ms = <100>;
     acceleration-exponent = <0>;
 };   // Layer-tap (for layer keys)
 / {
